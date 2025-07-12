@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<Params>
+<annotation>
+ Here we reproduce the numerical studies on https://arxiv.org/pdf/1911.04533
+ This xml corresponds to the X1 lattice on table 1
+ beta=3.36
+ k_u =1/(8+2mu_0) = 0.1366400 ->mu_0 = (2k)**-1-4 = -0.3407494145199066
+ k_s =1/(8+2ms_0) = 0.1366400 ->mu_0 = (2k)**-1-4 = -0.3407494145199066
+ csw=2.038765
+</annotation>
+  <MCControl>
+    <Cfg>
+      <cfg_type>DISORDERED</cfg_type>
+      <cfg_file>dummy</cfg_file>
+      <parallel_io>true</parallel_io>
+      <reunit>true</reunit>
+    </Cfg>
+    <RNG>
+      <Seed>
+        <elem>42</elem>
+        <elem>0</elem>
+        <elem>0</elem>
+        <elem>0</elem>
+      </Seed>
+    </RNG>
+    <StartUpdateNum>0</StartUpdateNum>
+    <NWarmUpUpdates>WARMUPS</NWarmUpUpdates>
+    <NProductionUpdates>PROD_UPDATES</NProductionUpdates>
+    <NUpdatesThisRun>NUPDATES</NUpdatesThisRun>
+    <SaveInterval>1</SaveInterval>
+    <SavePrefix>TuneProd</SavePrefix>
+    <SaveVolfmt>SINGLEFILE</SaveVolfmt>
+    <ParallelIO>false</ParallelIO>
+    <ReproCheckP>false</ReproCheckP>
+    <ReverseCheckP>false</ReverseCheckP>
+    <MonitorForces>true</MonitorForces>
+    <InlineMeasurements>
+      <elem>
+        <Name>POLYAKOV_LOOP</Name>
+        <Frequency>1</Frequency>
+        <Param>
+          <version>2</version>
+        </Param>
+        <NamedObject>
+          <gauge_id>default_gauge_field</gauge_id>
+        </NamedObject>
+      </elem>
+    </InlineMeasurements>
+  </MCControl>
+  <HMCTrj>
+    <nrow>%(VOL)s</nrow>
+    <Monomials>
+      %(MONOMIALS)s
+   </Monomials>
+    <Hamiltonian>
+      <monomial_ids>
+        %(MONOMIAL_IDS)s
+      </monomial_ids>
+    </Hamiltonian>
+    <MDIntegrator>
+        <tau0>1</tau0>
+        <Integrator>
+          <Name>LCM_STS_LEAPFROG</Name>
+          <n_steps>NSTEPS</n_steps>
+           <monomial_ids>
+              %(MONOMIAL_IDS)s
+           </monomial_ids>
+        </Integrator>
+    </MDIntegrator>
+  </HMCTrj>
+</Params>
