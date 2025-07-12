@@ -35,6 +35,7 @@ monomials['TWO_FLAVOR_EOPREC']='''
               <invType>CG_INVERTER</invType>
               <RsdCG>1.0e-8</RsdCG>
               <MaxCG>1000</MaxCG>
+              <Verbose>false</Verbose>
             </InvertParam>
         <ChronologicalPredictor>
         <Name>ZERO_GUESS_4D_PREDICTOR</Name>
@@ -105,6 +106,7 @@ monomials['ONE_FLAVOR_EOPREC']='''
               <invType>CG_INVERTER</invType>
               <RsdCG>1.0e-8</RsdCG>
               <MaxCG>1000</MaxCG>
+              <Verbose>false</Verbose>
             </InvertParam>
           </ActionApprox>
           <ForceApprox>
@@ -149,6 +151,7 @@ monomials['ONE_FLAVOR_EOPREC']='''
               <invType>CG_INVERTER</invType>
               <RsdCG>1.0e-8</RsdCG>
               <MaxCG>1000</MaxCG>
+              <Verbose>false</Verbose>
             </InvertParam>
           </ForceApprox>
         </Action>
