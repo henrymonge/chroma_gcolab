@@ -24,9 +24,9 @@
       </Seed>
     </RNG>
     <StartUpdateNum>0</StartUpdateNum>
-    <NWarmUpUpdates>WARMUPS</NWarmUpUpdates>
-    <NProductionUpdates>PROD_UPDATES</NProductionUpdates>
-    <NUpdatesThisRun>NUPDATES</NUpdatesThisRun>
+    <NWarmUpUpdates>%(WARMUPS)s</NWarmUpUpdates>
+    <NProductionUpdates>%(PROD_UPDATES)s</NProductionUpdates>
+    <NUpdatesThisRun>%(NUPDATES)s</NUpdatesThisRun>
     <SaveInterval>1</SaveInterval>
     <SavePrefix>TuneProd</SavePrefix>
     <SaveVolfmt>SINGLEFILE</SaveVolfmt>
