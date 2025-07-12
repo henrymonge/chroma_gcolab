@@ -1,61 +1,10 @@
-<?xml version="1.0"?>
-<Params>
-<annotation>
- Here we reproduce the numerical studies on https://arxiv.org/pdf/1911.04533
- This xml corresponds to the X1 lattice on table 1
- beta=3.36
- k_u =1/(8+2mu_0) = 0.1366400 ->mu_0 = (2k)**-1-4 = -0.3407494145199066
- k_s =1/(8+2ms_0) = 0.1366400 ->mu_0 = (2k)**-1-4 = -0.3407494145199066
- csw=2.038765
-</annotation>
-  <MCControl>
-    <Cfg>
-      <cfg_type>DISORDERED</cfg_type>
-      <cfg_file>dummy</cfg_file>
-      <parallel_io>true</parallel_io>
-      <reunit>true</reunit>
-    </Cfg>
-    <RNG>
-      <Seed>
-        <elem>42</elem>
-        <elem>0</elem>
-        <elem>0</elem>
-        <elem>0</elem>
-      </Seed>
-    </RNG>
-    <StartUpdateNum>0</StartUpdateNum>
-    <NWarmUpUpdates>1</NWarmUpUpdates>
-    <NProductionUpdates>2</NProductionUpdates>
-    <NUpdatesThisRun>2</NUpdatesThisRun>
-    <SaveInterval>1</SaveInterval>
-    <SavePrefix>TuneProd</SavePrefix>
-    <SaveVolfmt>SINGLEFILE</SaveVolfmt>
-    <ParallelIO>false</ParallelIO>
-    <ReproCheckP>false</ReproCheckP>
-    <ReverseCheckP>false</ReverseCheckP>
-    <MonitorForces>true</MonitorForces>
-    <InlineMeasurements>
-      <elem>
-        <Name>POLYAKOV_LOOP</Name>
-        <Frequency>1</Frequency>
-        <Param>
-          <version>2</version>
-        </Param>
-        <NamedObject>
-          <gauge_id>default_gauge_field</gauge_id>
-        </NamedObject>
-      </elem>
-    </InlineMeasurements>
-  </MCControl>
-  <HMCTrj>
-    <nrow>8 8 8 16</nrow>
-    <Monomials>
-    <elem>
+monomials={}
+monomials['TWO_FLAVOR_EOPREC']='''
     <Name>N_FLAVOR_LOGDET_EVEN_EVEN_FERM_MONOMIAL</Name>
         <FermionAction>
-     <FermAct>ACTION</FermAct>
-            <Mass>-0.3407494145199066</Mass>
-            <clovCoeff>1.152783591772098</clovCoeff>
+     <FermAct>%(ACTION)s</FermAct>
+            <Mass>%(MASS)s</Mass>
+            <clovCoeff>%(CLOV_COEFF)s</clovCoeff>
           <FermionBC>
             <FermBC>SIMPLE_FERMBC</FermBC>
             <boundary>1 1 1 -1</boundary>
@@ -63,16 +12,16 @@
         </FermionAction>
     <num_flavors>2</num_flavors>
     <NamedObject>
-       <monomial_id>HMC::light_ee</monomial_id>
+       <monomial_id>%(ID)s_ee</monomial_id>
     </NamedObject>
       </elem>
 
       <elem>
         <Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_MONOMIAL</Name>
         <FermionAction>
-          <FermAct>ACTION</FermAct>
-            <Mass>-0.3407494145199066</Mass>
-            <clovCoeff>1.152783591772098</clovCoeff>
+          <FermAct>%(ACTION)s</FermAct>
+            <Mass>%(MASS)s</Mass>
+            <clovCoeff>%(CLOV_COEFF)s</clovCoeff>
           <FermState>
            <Name>SIMPLE_FERM_STATE</Name>
            <FermionBC>
@@ -90,17 +39,20 @@
         <Name>ZERO_GUESS_4D_PREDICTOR</Name>
         </ChronologicalPredictor>
         <NamedObject>
-          <monomial_id>HMC::light_oo</monomial_id>
+          <monomial_id>%(ID)s_oo</monomial_id>
         </NamedObject>
       </elem>
+'''
+
+monomials['ONE_FLAVOR_EOPREC']='''
       <elem>
         <Name>ONE_FLAVOR_EOPREC_CONSTDET_FERM_RAT_MONOMIAL</Name>
         <num_pf>1</num_pf>
         <Action>
           <FermionAction>
-           <FermAct>CLOVER</FermAct>
-            <Mass>-0.3407494145199066</Mass>
-            <clovCoeff>1.152783591772098</clovCoeff>
+           <FermAct>%(ACTION)s</FermAct>
+            <Mass>%(MASS)s</Mass>
+            <clovCoeff>%(CLOV_COEFF)s</clovCoeff>
             <FermState>
               <Name>SIMPLE_FERM_STATE</Name>
               <FermionBC>
@@ -200,38 +152,31 @@
           </ForceApprox>
         </Action>
         <NamedObject>
-          <monomial_id>HMC::rat_strange</monomial_id>
+          <monomial_id>%(ID)s</monomial_id>
         </NamedObject>
       </elem>
+'''
 
+monomials['GAUGE_MONOMIAL']='''
       <elem>
     <Name>GAUGE_MONOMIAL</Name>
     <GaugeAction>
-       <Name>WILSON_GAUGEACT</Name>
-       <beta>3.36</beta>
+       <Name>%(ACTION)s</Name>
+       <beta>%(BETA)s</beta>
        <GaugeBC>
         <Name>PERIODIC_GAUGEBC</Name>
            </GaugeBC>
         </GaugeAction>
     <NamedObject>
-      <monomial_id>HMC::gauge</monomial_id>
+      <monomial_id>%(ID)s</monomial_id>
         </NamedObject>
       </elem>
-
-   </Monomials>
-    <Hamiltonian>
-      <monomial_ids>
-        <elem>HMC::light_ee</elem>
-        <elem>HMC::light_oo</elem>
-        <elem>HMC::rat_strange</elem>
-        <elem>HMC::gauge</elem>
-      </monomial_ids>
-    </Hamiltonian>
-    <MDIntegrator>
-        <tau0>1</tau0>
+'''
+integrators={}
+integrators['LCM_STS_LEAPFROG']='''
         <Integrator>
           <Name>LCM_STS_LEAPFROG</Name>
-          <n_steps>NSTEPS</n_steps>
+          <n_steps>%(NSTEPS)s</n_steps>
            <monomial_ids>
              <elem>HMC::light_ee</elem>
              <elem>HMC::light_oo</elem>
@@ -239,6 +184,4 @@
              <elem>HMC::gauge</elem>
            </monomial_ids>
         </Integrator>
-    </MDIntegrator>
-  </HMCTrj>
-</Params>
+'''
