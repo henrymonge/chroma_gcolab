@@ -1,5 +1,6 @@
 monomials={}
 monomials['TWO_FLAVOR_EOPREC']='''
+<elem>
     <Name>N_FLAVOR_LOGDET_EVEN_EVEN_FERM_MONOMIAL</Name>
         <FermionAction>
      <FermAct>%(ACTION)s</FermAct>
