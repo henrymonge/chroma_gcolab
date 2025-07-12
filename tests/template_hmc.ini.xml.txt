@@ -1,16 +1,10 @@
 <?xml version="1.0"?>
 <Params>
 <annotation>
- Here we reproduce the numerical studies on https://arxiv.org/pdf/1911.04533
- This xml corresponds to the X1 lattice on table 1
- beta=3.36
- k_u =1/(8+2mu_0) = 0.1366400 ->mu_0 = (2k)**-1-4 = -0.3407494145199066
- k_s =1/(8+2ms_0) = 0.1366400 ->mu_0 = (2k)**-1-4 = -0.3407494145199066
- csw=2.038765
 </annotation>
   <MCControl>
     <Cfg>
-      <cfg_type>DISORDERED</cfg_type>
+      <cfg_type>%(CFG)s</cfg_type>
       <cfg_file>dummy</cfg_file>
       <parallel_io>true</parallel_io>
       <reunit>true</reunit>
@@ -58,10 +52,10 @@
       </monomial_ids>
     </Hamiltonian>
     <MDIntegrator>
-        <tau0>1</tau0>
+        <tau0>%(TAU)s</tau0>
         <Integrator>
           <Name>LCM_STS_LEAPFROG</Name>
-          <n_steps>NSTEPS</n_steps>
+          <n_steps>%(NSTEPS)s</n_steps>
            <monomial_ids>
               %(MONOMIAL_IDS)s
            </monomial_ids>
