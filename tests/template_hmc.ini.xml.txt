@@ -54,7 +54,7 @@
     <MDIntegrator>
         <tau0>%(TAU)s</tau0>
         <Integrator>
-          <Name>LCM_STS_LEAPFROG</Name>
+          <Name>%(NAME)s</Name>
           <n_steps>%(NSTEPS)s</n_steps>
            <monomial_ids>
               %(MONOMIAL_IDS)s
