@@ -1,4 +1,4 @@
-
+import numpy as np
 monomial_tex={'GAUGE_MONOMIAL':
 '\\frac12\\textrm{Tr}\\: F_{\\mu\\nu}F^{\\mu\\nu}'}
 monomial_tex['TWO_FLAVOR_EOPREC']='\\sum_{f=1}^2\\bar\\psi_f (i \\gamma^\\mu \\partial_\\mu - m_f)'
@@ -22,7 +22,7 @@ def display_action(my_monomials):
 
   display(Latex(my_action+'$'))
 
-  def getVolumeSites(params):
+def getVolumeSites(params):
     vol=params['VOL'].split(' ')[-4::]
     vol=np.array([int(i) for i in vol])
     return vol.prod()
