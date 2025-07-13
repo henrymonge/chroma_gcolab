@@ -27,7 +27,7 @@ def getVolumeSites(params):
     vol=np.array([int(i) for i in vol])
     return vol.prod()
 
-def writeInputFile(params):
+def writeInputFile(params,ini):
   base_xml='/home/tests/template_hmc.ini.xml.txt'
   fin=open(base_xml)
   fout=open(ini,'w')
