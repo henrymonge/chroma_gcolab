@@ -21,3 +21,8 @@ def display_action(my_monomials):
   my_action=my_action[:-1]
 
   display(Latex(my_action+'$'))
+
+  def getVolumeSites(params):
+    vol=params['VOL'].split(' ')[-4::]
+    vol=np.array([int(i) for i in vol])
+    return vol.prod()
