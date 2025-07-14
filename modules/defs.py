@@ -28,7 +28,7 @@ def getVolumeSites(params):
     vol=np.array([int(i) for i in vol])
     return vol.prod()
 
-def writeInputFile(params,ini,outdir):
+def writeInputFile(params,outdir):
   base_xml='/home/tests/template_hmc.ini.xml.txt'
   fin=open(base_xml)
   fout=open(ini,'w')
@@ -41,7 +41,7 @@ def writeInputFile(params,ini,outdir):
   stdout=outdir+'/hmc.stdout'
   return ini,out,log,stdout
 
-def writeInputFileProp(params,ini,outdir):
+def writeInputFileProp(params,outdir):
   base_xml='/home/tests/template_prop.ini.xml.txt'
   fin=open(base_xml)
   fout=open(ini,'w')
