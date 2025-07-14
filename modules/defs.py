@@ -81,6 +81,6 @@ def setMonomialIds(params):
   
   monomials=''
   for m in params['Monomials'].keys():
-    monomials+=xml_input.monomials[m]%params['Monomials'][m]
+    monomials+=xml_input.monomials_defs[m]%params['Monomials'][m]
   params['MONOMIALS']=monomials
   params['MONOMIAL_IDS']=params['Monomial_ids']
