@@ -45,6 +45,35 @@ monomials['TWO_FLAVOR_EOPREC']='''
         </NamedObject>
       </elem>
 '''
+monomials['TWO_FLAVOR_EOPREC']='''
+      <elem>
+        <Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_MONOMIAL</Name>
+        <FermionAction>
+          <FermAct>%(ACTION)s</FermAct>
+            <Mass>%(MASS)s</Mass>
+            <clovCoeff>%(CLOV_COEFF)s</clovCoeff>
+          <FermState>
+           <Name>SIMPLE_FERM_STATE</Name>
+           <FermionBC>
+            <FermBC>SIMPLE_FERMBC</FermBC>
+                 <boundary>1 1 1 -1</boundary>
+            </FermionBC>
+          </FermState>
+        </FermionAction>
+            <InvertParam>
+              <invType>CG_INVERTER</invType>
+              <RsdCG>1.0e-8</RsdCG>
+              <MaxCG>1000</MaxCG>
+              <Verbose>false</Verbose>
+            </InvertParam>
+        <ChronologicalPredictor>
+        <Name>ZERO_GUESS_4D_PREDICTOR</Name>
+        </ChronologicalPredictor>
+        <NamedObject>
+          <monomial_id>%(ID)s_oo</monomial_id>
+        </NamedObject>
+      </elem>
+'''
 
 monomials['ONE_FLAVOR_EOPREC']='''
       <elem>
