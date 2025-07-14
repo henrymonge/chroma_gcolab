@@ -41,6 +41,18 @@ def writeInputFile(params,ini,outdir):
   stdout=outdir+'/hmc.stdout'
   return ini,out,log,stdout
 
+def writeInputFileProp(params,ini,outdir):
+  base_xml='/home/tests/template_prop.ini.xml.txt'
+  fin=open(base_xml)
+  fout=open(ini,'w')
+  fout.write(fin.read()%params)
+  fin.close()
+  fout.close()
+  ini=outdir+'/prop.ini.xml'
+  out=outdir+'/prop.out'
+  log=outdir+'/prop.log'
+  stdout=outdir+'/prop.stdout'
+  return ini,out,log,stdout
 
 def setMonomialIds(params):
   params['Monomial_ids']=''
