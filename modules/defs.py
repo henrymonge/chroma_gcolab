@@ -35,6 +35,12 @@ def writeInputFile(params,ini):
   fout.write(fin.read()%params)
   fin.close()
   fout.close()
+  ini=outdir+'/hmc.ini.xml'
+  out=outdir+'/hmc.out'
+  log=outdir+'/hmc.log'
+  stdout=outdir+'/hmc.stdout'
+  return ini,out,log,stdout
+
 
 def setMonomialIds(params):
   params['Monomial_ids']=''
