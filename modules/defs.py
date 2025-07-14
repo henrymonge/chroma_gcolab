@@ -58,10 +58,10 @@ def writeInputFileProp(params,outdir):
 
 def writeInputFileHadspec(params,outdir):
   base_xml='/home/tests/template_hadspec.ini.xml.txt'
-  ini=outdir+'/prop.ini.xml'
-  out=outdir+'/prop.out'
-  log=outdir+'/prop.log'
-  stdout=outdir+'/prop.stdout'
+  ini=outdir+'/hadspec.ini.xml'
+  out=outdir+'/hadspec.out'
+  log=outdir+'/hadspec.log'
+  stdout=outdir+'/hadspec.stdout'
   fin=open(base_xml)
   fout=open(ini,'w')
   fout.write(fin.read()%params)
