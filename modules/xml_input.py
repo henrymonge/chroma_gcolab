@@ -45,7 +45,7 @@ monomials['TWO_FLAVOR_EOPREC']='''
         </NamedObject>
       </elem>
 '''
-monomials['TWO_FLAVOR_EOPREC']='''
+monomials['TWO_FLAVOR_EOPREC_OO']='''
       <elem>
         <Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_MONOMIAL</Name>
         <FermionAction>
