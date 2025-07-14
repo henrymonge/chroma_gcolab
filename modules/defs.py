@@ -4,7 +4,7 @@ monomial_tex={'GAUGE_MONOMIAL':
 '\\frac14\\textrm{Tr}\\: F_{\\mu\\nu}F^{\\mu\\nu}'}
 monomial_tex['TWO_FLAVOR_EOPREC']='\\sum_{f=1}^2\\bar\\psi_f (i \\gamma^\\mu \\partial_\\mu - m_f) \\psi_f'
 #monomial_tex['TWO_FLAVOR_EOPREC']+= '- g \\sum_{f=1}^2 A_\\mu^a \\bar\\psi_f \\gamma^\\mu \\lambda_a \\psi_f'
-monomial_tex['ONE_FLAVOR_EOPREC']='\\bar\\psi_f (i \\gamma^\\mu \\partial_\\mu - m_f) \\psi_f  
+monomial_tex['ONE_FLAVOR_EOPREC']='\\bar\\psi_f (i \\gamma^\\mu \\partial_\\mu - m_f) \\psi_f'  
 #monomial_tex['ONE_FLAVOR_EOPREC']+=' - g A_\\mu^a\\bar\\psi_f \\gamma^\\mu\\lambda_a \\psi_f'
 
 
