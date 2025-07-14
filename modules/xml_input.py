@@ -1,5 +1,5 @@
 import numpy as np
-import xml_input 
+ 
 monomial_tex={'GAUGE_MONOMIAL':
 '\\frac12\\textrm{Tr}\\: F_{\\mu\\nu}F^{\\mu\\nu}'}
 monomial_tex['TWO_FLAVOR_EOPREC']='\\sum_{f=1}^2\\bar\\psi_f (i \\gamma^\\mu \\partial_\\mu - m_f)'
@@ -47,6 +47,6 @@ def setMonomialIds(params):
   
   monomials=''
   for m in params['Monomials'].keys():
-    monomials+=xml_input.monomials[m]%params['Monomials'][m]
+    monomials+=monomials_tex[m]%params['Monomials'][m]
   params['MONOMIALS']=monomials
   params['MONOMIAL_IDS']=params['Monomial_ids']
