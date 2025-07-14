@@ -1,7 +1,7 @@
 import numpy as np
 import xml_input 
 monomial_tex={'GAUGE_MONOMIAL':
-'\\frac12\\textrm{Tr}\\: F_{\\mu\\nu}F^{\\mu\\nu}'}
+'\\frac14\\textrm{Tr}\\: F_{\\mu\\nu}F^{\\mu\\nu}'}
 monomial_tex['TWO_FLAVOR_EOPREC']='\\sum_{f=1}^2\\bar\\psi_f (i \\gamma^\\mu \\partial_\\mu - m_f)'
 monomial_tex['TWO_FLAVOR_EOPREC']+= '\\psi_f  - g \\sum_{f=1}^2 A_\\mu^a \\bar\\psi_f \\gamma^\\mu \\lambda_a \\psi_f'
 monomial_tex['ONE_FLAVOR_EOPREC']='\\bar\\psi_f (i \\gamma^\\mu \\partial_\\mu - m_f) \\psi_f  - g A_\\mu^a'
