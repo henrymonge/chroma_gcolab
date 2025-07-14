@@ -52,10 +52,10 @@
       </monomial_ids>
     </Hamiltonian>
     <MDIntegrator>
-        <tau0>%(TAU)s</tau0>
+        <tau0>%(INTGRTOR_TAU)s</tau0>
         <Integrator>
-          <Name>%(NAME)s</Name>
-          <n_steps>%(NSTEPS)s</n_steps>
+          <Name>%(INTGRTOR)s</Name>
+          <n_steps>%(INTGRTOR_STEPS)s</n_steps>
            <monomial_ids>
               %(MONOMIAL_IDS)s
            </monomial_ids>
