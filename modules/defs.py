@@ -56,6 +56,20 @@ def writeInputFileProp(params,outdir):
 
   return ini,out,log,stdout
 
+def writeInputFileHadspec(params,outdir):
+  base_xml='/home/tests/template_hadspec.ini.xml.txt'
+  ini=outdir+'/prop.ini.xml'
+  out=outdir+'/prop.out'
+  log=outdir+'/prop.log'
+  stdout=outdir+'/prop.stdout'
+  fin=open(base_xml)
+  fout=open(ini,'w')
+  fout.write(fin.read()%params)
+  fin.close()
+  fout.close()
+
+  return ini,out,log,stdout
+
 def setMonomialIds(params):
   params['Monomial_ids']=''
   for m in params['Monomials'].keys():
