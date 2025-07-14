@@ -30,28 +30,30 @@ def getVolumeSites(params):
 
 def writeInputFile(params,outdir):
   base_xml='/home/tests/template_hmc.ini.xml.txt'
-  fin=open(base_xml)
-  fout=open(ini,'w')
-  fout.write(fin.read()%params)
-  fin.close()
-  fout.close()
   ini=outdir+'/hmc.ini.xml'
   out=outdir+'/hmc.out'
   log=outdir+'/hmc.log'
   stdout=outdir+'/hmc.stdout'
-  return ini,out,log,stdout
-
-def writeInputFileProp(params,outdir):
-  base_xml='/home/tests/template_prop.ini.xml.txt'
   fin=open(base_xml)
   fout=open(ini,'w')
   fout.write(fin.read()%params)
   fin.close()
   fout.close()
+
+  return ini,out,log,stdout
+
+def writeInputFileProp(params,outdir):
+  base_xml='/home/tests/template_prop.ini.xml.txt'
   ini=outdir+'/prop.ini.xml'
   out=outdir+'/prop.out'
   log=outdir+'/prop.log'
   stdout=outdir+'/prop.stdout'
+  fin=open(base_xml)
+  fout=open(ini,'w')
+  fout.write(fin.read()%params)
+  fin.close()
+  fout.close()
+
   return ini,out,log,stdout
 
 def setMonomialIds(params):
