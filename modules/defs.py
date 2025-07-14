@@ -78,6 +78,8 @@ def setMonomialIds(params):
       if 'TWO_FLAVOR_EOPREC' in m:
         params['Monomial_ids']+='\t\t\t\t\t<elem>'+params['Monomials'][m]['ID']+'_ee</elem>\n'
         params['Monomial_ids']+='\t\t\t\t\t<elem>'+params['Monomials'][m]['ID']+'_oo</elem>\n'
+      elif 'TWO_FLAVOR_EOPREC_OO' in m:
+        params['Monomial_ids']+='\t\t\t\t\t<elem>'+params['Monomials'][m]['ID']+'_oo</elem>\n'
       else:
         params['Monomial_ids']+='\t\t\t\t\t<elem>'+params['Monomials'][m]['ID']+'</elem>\n'
   
