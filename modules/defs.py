@@ -8,6 +8,7 @@ monomial_tex['TWO_FLAVOR_EOPREC_OO']='\\sum_{f=1}^2\\bar\\psi_f (i \\gamma^\\mu 
 #monomial_tex['TWO_FLAVOR_EOPREC']+= '- g \\sum_{f=1}^2 A_\\mu^a \\bar\\psi_f \\gamma^\\mu \\lambda_a \\psi_f'
 monomial_tex['ONE_FLAVOR_EOPREC']='\\bar\\psi_f (i \\gamma^\\mu \\partial_\\mu - m_f) \\psi_f'  
 #monomial_tex['ONE_FLAVOR_EOPREC']+=' - g A_\\mu^a\\bar\\psi_f \\gamma^\\mu\\lambda_a \\psi_f'
+monomial_tex['TWO_FLAVOR_UNPREC']='\\sum_{f=1}^2\\bar\\psi_f (i \\gamma^\\mu \\partial_\\mu - m_f) \\psi_f'
 
 
 def display_action(my_monomials):
@@ -78,7 +79,7 @@ def setMonomialIds(params):
       if 'TWO_FLAVOR_EOPREC' in m and 'EOPREC_OO' not in m:
         params['Monomial_ids']+='\t\t\t\t\t<elem>'+params['Monomials'][m]['ID']+'_ee</elem>\n'
         params['Monomial_ids']+='\t\t\t\t\t<elem>'+params['Monomials'][m]['ID']+'_oo</elem>\n'
-      elif 'TWO_FLAVOR_EOPREC_OO' in m:
+      elif 'TWO_FLAVOR_EOPREC_OO' in m or 'TWO_FLAVOR_UNPREC' in m:
         params['Monomial_ids']+='\t\t\t\t\t<elem>'+params['Monomials'][m]['ID']+'_oo</elem>\n'
       else:
         params['Monomial_ids']+='\t\t\t\t\t<elem>'+params['Monomials'][m]['ID']+'</elem>\n'

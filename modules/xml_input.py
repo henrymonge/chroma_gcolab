@@ -190,6 +190,30 @@ monomials['ONE_FLAVOR_EOPREC']='''
       </elem>
 '''
 
+monomials['TWO_FLAVOR_UNPREC']='''
+	<Name>TWO_FLAVOR_UNPREC_FERM_MONOMIAL</Name>
+	<InvertParam>
+          <invType>CG_INVERTER</invType>
+          <RsdCG>1.0e-8</RsdCG>
+          <MaxCG>1000</MaxCG>
+        </InvertParam>
+        <FermionAction>
+          <FermAct>%(ACTION)s</FermAct>
+          <Mass>%(MASS)s</Mass>
+          <FermionBC>
+            <FermBC>SIMPLE_FERMBC</FermBC>
+            <boundary>1 1 1 -1</boundary>
+          </FermionBC>
+        </FermionAction>
+	<NamedObject>
+	  <monomial_id>wilson</monomial_id>
+	</NamedObject>
+
+      </elem>
+
+'''
+
+
 monomials['GAUGE_MONOMIAL']='''
       <elem>
     <Name>GAUGE_MONOMIAL</Name>
