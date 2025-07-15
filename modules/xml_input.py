@@ -191,6 +191,7 @@ monomials['ONE_FLAVOR_EOPREC']='''
 '''
 
 monomials['TWO_FLAVOR_UNPREC']='''
+<elem>
 	<Name>TWO_FLAVOR_UNPREC_FERM_MONOMIAL</Name>
 	<InvertParam>
           <invType>CG_INVERTER</invType>
@@ -208,7 +209,6 @@ monomials['TWO_FLAVOR_UNPREC']='''
 	<NamedObject>
 	  <monomial_id>wilson</monomial_id>
 	</NamedObject>
-
       </elem>
 
 '''
