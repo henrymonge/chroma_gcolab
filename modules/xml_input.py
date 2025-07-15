@@ -207,7 +207,7 @@ monomials['TWO_FLAVOR_UNPREC']='''
           </FermionBC>
         </FermionAction>
 	<NamedObject>
-	  <monomial_id>wilson</monomial_id>
+	  <monomial_id>%(ID)s</monomial_id>
 	</NamedObject>
       </elem>
 
