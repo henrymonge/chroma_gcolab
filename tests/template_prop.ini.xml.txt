@@ -55,8 +55,8 @@
         <obsvP>false</obsvP>
         <numRetries>1</numRetries>
         <FermionAction>
-         <FermAct>WILSON</FermAct>
-         <Kappa>0.135</Kappa>
+         <FermAct>%(ACTION)s</FermAct>
+         <Mass>%(MASS)s</Mass>
          <AnisoParam>
            <anisoP>true</anisoP>
            <t_dir>3</t_dir>
@@ -69,9 +69,9 @@
          </FermionBC>
         </FermionAction>
         <InvertParam>
-          <invType>CG_INVERTER</invType>
-          <RsdCG>1.0e-8</RsdCG>
-          <MaxCG>1000</MaxCG>
+          <invType>%(INVERTER)s</invType>
+          <RsdCG>%(RES)s</RsdCG>
+          <MaxCG>%(ITER)s</MaxCG>
         </InvertParam>
       </Param>
       <NamedObject>
