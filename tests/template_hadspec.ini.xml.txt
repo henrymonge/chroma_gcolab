@@ -182,40 +182,6 @@ regression test spectrum output is kept within the chroma xml output
          <xml_file>hadspec.dat.xml</xml_file>
 	-->
     </elem>
-
-    <elem>
-      <annotation>
-         Compute the hadron spectrum. 
-         This version is a clone of the one above; however, the xml output is
-         written to a separate output file
-      </annotation>
-      <Name>HADRON_SPECTRUM</Name>
-      <Frequency>1</Frequency>
-      <Param>
-        <version>1</version>
-        <MesonP>true</MesonP>
-        <CurrentP>true</CurrentP>
-        <BaryonP>true</BaryonP>
-        <time_rev>false</time_rev>
-        <mom2_max>3</mom2_max>
-        <avg_equiv_mom>true</avg_equiv_mom>
-       </Param>
-      <NamedObject>
-        <gauge_id>default_gauge_field</gauge_id>
-        <sink_pairs>
-          <elem>
-            <first_id>sh_pt_sink_1</first_id>
-            <second_id>sh_pt_sink_1</second_id>
-          </elem>
-          <elem>
-            <first_id>sh_sh_sink_1</first_id>
-            <second_id>sh_sh_sink_1</second_id>
-          </elem>
-        </sink_pairs>
-      </NamedObject>
-      <xml_file>hadspec.dat.xml</xml_file>
-    </elem>
-
   </InlineMeasurements>
    <nrow>4 4 4 8</nrow>
 </Param>
